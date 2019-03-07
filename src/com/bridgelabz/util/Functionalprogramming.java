@@ -4,7 +4,7 @@ import java.util.Scanner;
  * @author Admin894
  *
  */
-public class Functionalprogramming {
+public class FunctionalProgramming {
 	
 	private static Scanner scan = new Scanner (System.in);
 	
@@ -46,6 +46,7 @@ System.out.println(" It is not a leap year");
 		h +=(float)1/i;
 
 	}
+	
 
 	System.out.println(h);
 	}
@@ -150,17 +151,19 @@ int win = 0;
 int loss = 0;
 for (int i=0; i<tr;i++)
 {
-	int s = stk;
-while(s>0 && s<gl)
+	int money = stk;
+while(money>0 && money<gl)
 {
-	if(Math.random()<0.5)
-		s++;
+	double r = Math.random();
+	if(r<0.5)
+		money++;
 	else
-		s--;
+		money++;
 }
-if(s==gl)
+if(money==gl)
 	win++;
-loss++;
+else
+	win--;
 }
 System.out.println(win + " win of " +tr);
 System.out.println("Percentage of winning a game is" + 100.0 * win / tr);
@@ -240,7 +243,28 @@ public static void printArray(int r,int c,int arr[][])
 		}
 }
 
+
+/**stopwatch
+ * @param stTime
+ * @param endTime
+ */
+public static void stopWatch(long stTime,long endTime)
+{
+	long timeElaps = endTime - stTime;
+	System.out.println("Clock time in  millisecond = " + timeElaps);
 }
+
+
+
+
+
+
+
+
+
+
+}
+
 
 
 

@@ -2,7 +2,7 @@ package com.bridgelabz.functionalprograms;
 
 import java.util.Scanner;
 
-import com.bridgelabz.util.Functionalprogramming;
+import com.bridgelabz.util.FunctionalProgramming;
 
 public class FlipCoin {
 
@@ -10,8 +10,8 @@ public class FlipCoin {
 		// TODO Auto-generated method stub
 		//Scanner scan = new Scanner(System.in);
 		System.out.println("Number of times coin flip");
-		int flip = Functionalprogramming.intSample();
-		Functionalprogramming.flipCoin(flip);
+		int flip = FunctionalProgramming.intSample();
+		FunctionalProgramming.flipCoin(flip);
 		}
 	}
 

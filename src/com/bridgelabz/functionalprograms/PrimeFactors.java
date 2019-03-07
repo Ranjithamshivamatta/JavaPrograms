@@ -2,7 +2,7 @@ package com.bridgelabz.functionalprograms;
 
 import java.util.Scanner;
 
-import com.bridgelabz.util.Functionalprogramming;
+import com.bridgelabz.util.FunctionalProgramming;
 
 public class PrimeFactors {
 
@@ -10,8 +10,8 @@ public class PrimeFactors {
 		// TODO Auto-generated method stub
 		//Scanner scn =new Scanner(System.in);
 	    System.out.println("Enter the number");
-	    int num = Functionalprogramming.intSample();
-	    Functionalprogramming.factors(num);
+	    int num = FunctionalProgramming.intSample();
+	    FunctionalProgramming.factors(num);
 	}
 	
 
