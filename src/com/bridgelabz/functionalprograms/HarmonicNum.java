@@ -1,0 +1,18 @@
+package com.bridgelabz.functionalprograms;
+
+import java.util.Scanner;
+
+import com.bridgelabz.util.Functionalprogramming;
+
+public class HarmonicNum {
+	@SuppressWarnings("resource")
+	public static void main(String[] args)
+	{
+		
+		System.out.println("Enter the num");
+		//Scanner scan = new Scanner(System.in);
+		int num = Functionalprogramming.intSample();
+		Functionalprogramming.harmonic(num);
+	}
+	
+}
