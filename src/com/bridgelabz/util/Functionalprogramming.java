@@ -1,5 +1,9 @@
 package com.bridgelabz.util;
 import java.util.Scanner;
+/**
+ * @author Admin894
+ *
+ */
 public class Functionalprogramming {
 	
 	private static Scanner scan = new Scanner (System.in);
@@ -216,6 +220,25 @@ public static void findingRoot(int a,int b,int c)
 }
 
 
+
+
+/**2 Dimentional Array
+ * @param r
+ * @param c
+ * @param arr
+ */
+public static void printArray(int r,int c,int arr[][])
+{
+	for(int i=0;i<r;i++)
+		{
+		for(int j=0;j<c;j++)
+			{
+			System.out.print(+ arr[i][j] + " ");
+		
+			}
+		System.out.println();
+		}
+}
 
 }
 
