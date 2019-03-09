@@ -10,11 +10,13 @@ public class HelloReplace {
 		//Scanner scan = new Scanner(System.in);
 		
 		System.out.println("Enter user name");
-		String username = FunctionalProgramming.stringSample();
+		String s= FunctionalProgramming.stringSample();
 		
-		//String message = scan.nextLine();
+
 		
-		FunctionalProgramming.helloReplace(username);
+	//	String pn = FunctionalProgramming.stringSample();
+		
+		FunctionalProgramming.replace(s);
 		
 	}
 }

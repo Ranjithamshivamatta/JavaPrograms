@@ -1,6 +1,6 @@
 package com.bridgelabz.functionalprograms;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 import com.bridgelabz.util.FunctionalProgramming;
 

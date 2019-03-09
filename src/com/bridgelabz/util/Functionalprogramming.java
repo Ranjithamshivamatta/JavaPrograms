@@ -1,5 +1,7 @@
 package com.bridgelabz.util;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 /**
  * @author Admin894
  *
@@ -8,16 +10,29 @@ public class FunctionalProgramming {
 	
 	private static Scanner scan = new Scanner (System.in);
 	
+	
 	public static int intSample()
 	{
 		return scan.nextInt();
 	}
+	
+	
 	public static String stringSample()
 	{
 		return scan.next();
 	}
+	
 
-	/*leapYear*/
+	public static Double doubleSample()
+	{
+		return scan.nextDouble();
+	}
+	
+	
+	
+	/**program to check leap year or not
+	 * @param year
+	 */
 	public static void leapYear(int year)
 	{
 		if(year<=999)
@@ -34,10 +49,9 @@ System.out.println(" It is not a leap year");
 
 	
 	
-	
-	
-	/*harmonic*/
-	
+	/**Prints the nth Harmonic value
+	 * @param num
+	 */
 	public static void harmonic(int num)
 	{
 	float h=1;
@@ -53,8 +67,10 @@ System.out.println(" It is not a leap year");
 	
 
 
-/*power*/
 
+/**Power of  2
+ * @param num
+ */
 public static void power(int num) 
 {
 	
@@ -73,8 +89,11 @@ public static void power(int num)
 
 }
 
-/*Factors*/
 
+
+/**To find prime factor
+ * @param num
+ */
 public static void factors(int num)
 {
 for(int i=2;i>1;i++)
@@ -84,38 +103,41 @@ for(int i=2;i>1;i++)
 		System.out.println(i + " ");
 		num = num/i;
 	}
-
-
-
+}
 }
 
 
-}
 
-
-/*helloReplace*/
-public static void helloReplace(String username)
+/**Print the username using replace
+ * @param username
+ */
+public static void replace(String s)
 {
-	//System.out.println("Enter username");
-String msg = new String(" Hello " + username + ",How are you");
-if(username.length()>=3)
+	String msg = new String("Hello " +s+ " , How are you?  ");
+	//System.out.println(msg);
+
+if(s.length()>=3)
 {
 System.out.println(msg);
 }
-else
-{
+else{
+
 System.out.println("Invalid username");
-
-}
-System.out.println("enter the replacename");
-String message = stringSample();
-System.out.println(msg.replace(username,message));
 }
 
+System.out.println("enter the replacename  ");
+String pn=FunctionalProgramming.stringSample();
+
+System.out.println(msg.replace(s,pn));
+}
 
 
 
-/*flipCoin*/
+
+
+/**Percentage of head and tail(flip coin)
+ * @param flip
+ */
 public static void flipCoin(int flip)
 {
 int c=1;
@@ -144,7 +166,11 @@ System.out.println("tail perc="+tailper);
 
 
 
-/*gambler*/
+/**Gambler(Percentage of win and loss)
+ * @param stk
+ * @param gl
+ * @param tr
+ */
 public static void gambler(int stk,int gl,int tr)
 {
 int win = 0;
@@ -158,12 +184,12 @@ while(money>0 && money<gl)
 	if(r<0.5)
 		money++;
 	else
-		money++;
+		money--;
 }
 if(money==gl)
 	win++;
 else
-	win--;
+	loss++;
 }
 System.out.println(win + " win of " +tr);
 System.out.println("Percentage of winning a game is" + 100.0 * win / tr);
@@ -172,7 +198,12 @@ System.out.println("Percentage of losing a game is" + 100.0 * loss / tr);
 
 }
 
-/*Coupon numbers*/
+
+
+/**Coupon numbers
+ * @param num
+ * @return
+ */
 public static int couponNum(int num)
 {
 	boolean[] isCollected = new boolean[num];
@@ -195,15 +226,20 @@ public static int couponNum(int num)
 	
 }
 
-/*Quadratic Equation*/
 
+
+/**Quadratic equation
+ * @param a
+ * @param b
+ * @param c
+ */
 public static void findingRoot(int a,int b,int c)
 {
 	int delta = (b*b) - (4*a*c);
 	if(delta>0)
 	{
 		double rt1 = (-b+Math.sqrt(delta)/(2*a));
-		double rt2 = (-b+Math.sqrt(delta)/(2*a));
+		double rt2 = (-b-Math.sqrt(delta)/(2*a));
 		System.out.println("Roots are unique" + " " + "root=" + rt1 + "rt2=" +rt2 );	
 	}
 	else if (delta == 0)
@@ -230,13 +266,21 @@ public static void findingRoot(int a,int b,int c)
  * @param c
  * @param arr
  */
-public static void printArray(int r,int c,int arr[][])
+public static void printArray(int r,int c,Object[][] arr)
 {
+	System.out.println("Enter the next values");
 	for(int i=0;i<r;i++)
 		{
 		for(int j=0;j<c;j++)
 			{
-			System.out.print(+ arr[i][j] + " ");
+			arr[i][j] =FunctionalProgramming.stringSample();
+			}
+		}
+	for(int i=0;i<r;i++)
+	{
+	for(int j=0;j<c;j++)
+	{
+			System.out.print( arr[i][j] + " ");
 		
 			}
 		System.out.println();
@@ -244,14 +288,59 @@ public static void printArray(int r,int c,int arr[][])
 }
 
 
-/**stopwatch
+/**Simulate Stopwatch program
  * @param stTime
  * @param endTime
  */
 public static void stopWatch(long stTime,long endTime)
 {
 	long timeElaps = endTime - stTime;
-	System.out.println("Clock time in  millisecond = " + timeElaps);
+	System.out.println("Clock time in  nanosecond = " + timeElaps);
+}
+
+
+
+
+/**Sum of three Integer adds to ZERO
+ * @param array
+ * @param num
+ */
+public static void tripleSum(int[] array, int num) 
+{ 
+    boolean found = true; 
+    for (int i=0; i<num-2; i++) 
+    { 
+        for (int j=i+1; j<num-1; j++) 
+        { 
+     for (int k=j+1; k<num; k++) 
+            { 
+               if (array[i]+array[j]+array[k] == 0) 
+                { 
+                    System.out.print(array[i]); 
+                    System.out.print(" "); 
+                    System.out.print(array[j]); 
+                    System.out.print(" "); 
+                    System.out.print(array[k]); 
+                    System.out.print("\n"); 
+                    found = true; 
+                } 
+            } 
+        } 
+    } 
+    if (found == false) 
+        System.out.println(" not exist "); 
+ 
+}
+
+
+/**WindChill program
+ * @param t
+ * @param v
+ */
+public static double wChill(double t,double v)
+{
+double wind = 35.74 + 0.6215*t + (0.4275*t - 35.75) * Math.pow(v,0.16);
+return wind;
 }
 
 
@@ -259,13 +348,18 @@ public static void stopWatch(long stTime,long endTime)
 
 
 
+/**Distance Program using command line arguments
+ * @param x
+ * @param y
+ */
+public static void distance(int x, int y) 
+{
+	double dist = Math.sqrt(x*x + y*y);
+    System.out.println("distance from (" + x + ", " + y + ") to (0, 0) = " + dist);
 
-
-
-
+	
 }
-
-
+}
 
 
 
