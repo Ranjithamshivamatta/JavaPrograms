@@ -10,7 +10,7 @@ public class FlipCoin {
 		// TODO Auto-generated method stub
 		//Scanner scan = new Scanner(System.in);
 		System.out.println("Number of times coin flip");
-		int flip = FunctionalProgramming.intSample();
+		int flip = FunctionalProgramming.getInt();
 		FunctionalProgramming.flipCoin(flip);
 		}
 	}

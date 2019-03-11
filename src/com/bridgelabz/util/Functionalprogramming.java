@@ -1,7 +1,9 @@
 package com.bridgelabz.util;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+
 /**
  * @author Admin894
  *
@@ -11,19 +13,19 @@ public class FunctionalProgramming {
 	private static Scanner scan = new Scanner (System.in);
 	
 	
-	public static int intSample()
+	public static int getInt()
 	{
 		return scan.nextInt();
 	}
 	
 	
-	public static String stringSample()
+	public static String getString()
 	{
 		return scan.next();
 	}
 	
 
-	public static Double doubleSample()
+	public static Double getdouble()
 	{
 		return scan.nextDouble();
 	}
@@ -36,7 +38,7 @@ public class FunctionalProgramming {
 	public static void leapYear(int year)
 	{
 		if(year<=999)
-			System.out.println("It is invalid number, enter the four digit number");
+			System.out.println("It is invalid number");
 		
 
 		else if(((year % 4 == 0)&&( year % 100 != 0))||( year % 400 == 0))
@@ -54,15 +56,15 @@ System.out.println(" It is not a leap year");
 	 */
 	public static void harmonic(int num)
 	{
-	float h=1;
+	float harmonic=1;
 	for(int i=2;i<=num; i++)
 	{
-		h +=(float)1/i;
+		harmonic +=(float)1/i;
 
 	}
 	
 
-	System.out.println(h);
+	System.out.println(harmonic);
 	}
 	
 
@@ -77,7 +79,7 @@ public static void power(int num)
 	// TODO Auto-generated method stub
 	
 	int i=0;
-	int power =1;
+	int power = 1 ;
 	if (num>31)
 	System.out.println("Enter the power of two that are les than 2^"+num);
 	while( i<=num)
@@ -86,7 +88,6 @@ public static void power(int num)
 	power = power * 2;
 	i++;
 }
-
 }
 
 
@@ -105,35 +106,25 @@ for(int i=2;i>1;i++)
 	}
 }
 }
-
+                         
 
 
 /**Print the username using replace
  * @param username
  */
-public static void replace(String s)
+public static void replace(String s1,String s2,String s3)
 {
-	String msg = new String("Hello " +s+ " , How are you?  ");
-	//System.out.println(msg);
-
-if(s.length()>=3)
+	
+if(s2.length()>=3)
 {
-System.out.println(msg);
+	String s4 = s3.replaceAll(s1, s2);
+	System.out.println(s4);
 }
-else{
-
-System.out.println("Invalid username");
+else
+{
+	System.out.println("Please enter the valid username");
 }
-
-System.out.println("enter the replacename  ");
-String pn=FunctionalProgramming.stringSample();
-
-System.out.println(msg.replace(s,pn));
 }
-
-
-
-
 
 /**Percentage of head and tail(flip coin)
  * @param flip
@@ -228,6 +219,7 @@ public static int couponNum(int num)
 
 
 
+
 /**Quadratic equation
  * @param a
  * @param b
@@ -273,7 +265,7 @@ public static void printArray(int r,int c,Object[][] arr)
 		{
 		for(int j=0;j<c;j++)
 			{
-			arr[i][j] =FunctionalProgramming.stringSample();
+			arr[i][j] =FunctionalProgramming.getString();
 			}
 		}
 	for(int i=0;i<r;i++)
@@ -359,17 +351,61 @@ public static void distance(int x, int y)
 
 	
 }
+
+
+
+/**Replace username using regex method
+ * @param sentence
+ * @param userName
+ * @return
+ */
+public static String replace2(String sentence, String userName)
+{
+	final String REGEX_USERNAME = "<<userName>>";
+	Pattern p = Pattern.compile(REGEX_USERNAME);
+	Matcher m = p.matcher(sentence);
+	String message = m.replaceFirst(userName);
+	sentence = message.replaceAll(REGEX_USERNAME, userName);
+	
+	return sentence;
+	}
+
+
+
+
+
+/**Coupon numbers 2
+ * @param n
+ * @param random
+ */
+public static void isCouponNum(int num)
+{
+	int count=0,i=0,j=0;
+	int a[]=new int[num];
+	Random t= new Random();
+	
+    for(i=0;i<num;i++)
+	{
+    	
+    	a[i]=t.nextInt(num);
+    	 System.out.println(a[i] + " ");
+	}
+   
+    System.out.print("Distinct coupons:");
+   for(i=0;i<num;i++)
+   {
+	   for(j=0;j<i;j++)
+	   {
+	       if(a[i]==a[j])
+		    	break;
+	   }
+	        if(i==j)
+		        count++;
+   }
+   System.out.println(count);
 }
 
-
-
-
-
-
-
-
-
-
+}
 
 
 

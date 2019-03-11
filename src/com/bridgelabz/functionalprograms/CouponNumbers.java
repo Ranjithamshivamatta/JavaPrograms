@@ -7,7 +7,7 @@ public static void main(String[] args)
 {
 
 	System.out.println("Enter the number of coupons");
-	int num = FunctionalProgramming.intSample();
+	int num = FunctionalProgramming.getInt();
 	 int c=FunctionalProgramming.couponNum(num);
 	 System.out.println(c);
 }

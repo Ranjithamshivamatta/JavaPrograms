@@ -10,7 +10,7 @@ public class PrimeFactors {
 		// TODO Auto-generated method stub
 		//Scanner scn =new Scanner(System.in);
 	    System.out.println("Enter the number");
-	    int num = FunctionalProgramming.intSample();
+	    int num = FunctionalProgramming.getInt();
 	    FunctionalProgramming.factors(num);
 	}
 }

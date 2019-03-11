@@ -11,7 +11,7 @@ public class HarmonicNum {
 		
 		System.out.println("Enter the num");
 		//Scanner scan = new Scanner(System.in);
-		int num = FunctionalProgramming.intSample();
+		int num = FunctionalProgramming.getInt();
 		FunctionalProgramming.harmonic(num);
 	}
 	
