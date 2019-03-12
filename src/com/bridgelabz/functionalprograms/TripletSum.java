@@ -10,12 +10,11 @@ public class TripletSum {
 		int num =FunctionalProgramming.getInt();
 		int array[] = new int[num];
 		System.out.println("Enter the value");
-		
 		for(int i=0;i<num;i++)
 		{
 			
 			array[i] = FunctionalProgramming.getInt();
 		}
-	    FunctionalProgramming.tripleSum(array,num);
+	    FunctionalProgramming.tripleSum(num,array);
 	}
 }

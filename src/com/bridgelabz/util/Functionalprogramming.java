@@ -297,7 +297,7 @@ public static void stopWatch(long stTime,long endTime)
  * @param array
  * @param num
  */
-public static void tripleSum(int[] array, int num) 
+public static void tripleSum(int num,int array[]) 
 { 
     boolean found = true; 
     for (int i=0; i<num-2; i++) 
@@ -405,10 +405,115 @@ public static void isCouponNum(int num)
    System.out.println(count);
 }
 
+
+
+
+/**Permutation program
+ * @param input
+ */
+public static void permutation(String input){
+	permutation("", input);
 }
 
 
+private static void permutation(String perm, String word) {
+	if (word.isEmpty()) {
+		System.err.println(perm + word);
+
+	} else {
+		for (int i = 0; i <word.length(); i++) {
+			permutation(perm + word.charAt(i), word.substring(0, i) 
+					+ word.substring(i + 1, word.length()));
+		}
+	}
+
+}
 
 
+static final int USER = 1;
+static final int EMPTY = 0;
+static final int NONE = 0;
+
+static final int COMPUTER = 2;
+static final int STALEMATE = 3;
+
+public static char printChar(int b) {
+switch(b) {
+case EMPTY:
+ return ' ';
+case USER:
+ return 'X';
+case COMPUTER:
+ return 'O';
+}
+return ' ';
+}
+	
+
+public static int checkWinner(int[][] board) {
+	// Check if someone won
+	// Check horizontals
+
+	// top row
+	if((board[0][0] == board[0][1]) && (board[0][1] == board[0][2]))
+	    return board[0][0];
+
+	// middle row
+	if((board[1][0] == board[1][1]) && (board[1][1] == board[1][2]))
+	    return board[1][0];
+
+	// bottom row
+	if((board[2][0] == board[2][1]) && (board[2][1] == board[2][2]))
+	    return board[2][0];
+
+	// Check verticals
+
+	// left column
+	if((board[0][0] == board[1][0]) && (board[1][0] == board[2][0]))
+	    return board[0][0];
+
+	// middle column
+	if((board[0][1] == board[1][1]) && (board[1][1] == board[2][1]))
+	    return board[0][1];
+
+	// right column
+	if((board[0][2] == board[1][2]) && (board[1][2] == board[2][2]))
+	    return board[0][2];
+
+	// Check diagonals
+	// one diagonal
+	if((board[0][0] == board[1][1]) && (board[1][1] == board[2][2]))
+	    return board[0][0];
+
+	// the other diagonal
+	if((board[0][2] == board[1][1]) && (board[1][1] == board[2][0]))
+	    return board[0][2];
+
+	// Check if the board is full
+	if(board[0][0] == EMPTY || 
+           board[0][1] == EMPTY || 
+           board[0][2] == EMPTY || 
+	   board[1][0] == EMPTY ||
+	   board[1][1] == EMPTY ||
+	   board[1][2] == EMPTY ||
+	   board[2][0] == EMPTY ||
+	   board[2][1] == EMPTY ||
+	   board[2][2] == EMPTY)
+	    return NONE;
+
+	return STALEMATE;
+    }
+
+    // Generate a random computer move
+    public static int computer_move(int[][] board) {
+	int move = (int)(Math.random()*9);
+
+	while(board[move/3][move%3] != EMPTY) 
+	    move = (int)(Math.random()*9);
+
+	return move;
+    }
+
+}
 
 
