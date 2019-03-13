@@ -1,14 +1,10 @@
 package com.bridgelabz.functionalprograms;
-
-
-
-
 import com.bridgelabz.util.FunctionalProgramming;
 
 public class TicTacToe
 {
-	 static final int EMPTY = 0;
-	 static final int NONE = 0;
+	static final int EMPTY = 0;
+	static final int NONE = 0;
     static final int USER = 1;
     static final int COMPUTER = 2;
     public static void main(String[] args) {

@@ -12,6 +12,7 @@ public class PrimeFactors {
 	    System.out.println("Enter the number");
 	    int num = FunctionalProgramming.getInt();
 	    FunctionalProgramming.factors(num);
+	   
 	}
 }
 
