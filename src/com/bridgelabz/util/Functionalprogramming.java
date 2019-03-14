@@ -284,10 +284,10 @@ public static void printArray(int r,int c,Object[][] arr)
  * @param stTime
  * @param endTime
  */
-public static void stopWatch(long stTime,long endTime)
+public static long stopWatch(long stTime,long endTime)
 {
 	long timeElaps = endTime - stTime;
-	System.out.println("Clock time in  nanosecond = " + timeElaps);
+	return timeElaps;
 }
 
 

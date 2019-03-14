@@ -19,5 +19,4 @@ if(AlgorithmProgramming.isAnagram(s,r))
 	else
 	System.out.println("The two strings are not anagram of each other");
 }
-
 }

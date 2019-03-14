@@ -12,8 +12,8 @@ public class StopWatch {
 		
 		long endTime = System.nanoTime();
 		System.out.println("Ending time of a clock=" + endTime);
-		FunctionalProgramming.stopWatch(stTime,endTime);
-		
+		long time=FunctionalProgramming.stopWatch(stTime,endTime);
+		System.out.println("Clock time in  nanosecond = " + time);
 	}
 
 }
