@@ -122,22 +122,22 @@ public static boolean isAnagram(char[] str1,char[] str2)
 /**Bubble Sort
  * @param a
  */
-public static void bubbleSort(int a[])
+public static void bubbleSort(int arr[])
 {
-	for(int i=0;i<a.length-1;i++)
+	for(int i=0;i<arr.length-1;i++)
 	{
-		for(int j=0;j<a.length-1;j++)
+		for(int j=0;j<arr.length-1;j++)
 	
 			{
-				if(a[j]>a[j+1])
+				if(arr[j]>arr[j+1])
 				{
-					int t = a[j];
-					a[j] = a[j+1];
-					a[j+1] = t;
+					int t = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = t;
 				}
 			}
 		}
-	for(int e:a)
+	for(int e:arr)
 	{
 		System.out.println(e+ " ");
 	}
@@ -151,20 +151,25 @@ public static void insertString(String str)
 	char[] array=str.toCharArray();
 	int i=0,j=0,w;
 	char temp;
-	for(i=0;i<array.length;i++)
+for( i=0;i<array.length;i++)
+{
+	for(j=0;j<=i;j++)
 	{
-		for(j=0;j<=i;j++)
+		if(array[j]>array[i])
 		{
-			if(array[j]>array[i])
+			temp = array[j];
+			array[j]=array[i];
+			array[i]=temp;
+			for(w=i;w>j+1;w--)
 			{
-				 temp=array[j];
-				array[j]=array[i];
-				for(w=i;w>j+1;w--)
-				    array[w]=array[w-1];	
-                array[w]=temp;
+				array[w] = array[w-1];
+			}
+			array[w] = temp;
+			
 		}
-		}
+		
 	}
+}
 for(int k=0;k<array.length;k++)
 	System.out.print(array[k] + " ");
 System.out.println(" ");
@@ -183,7 +188,7 @@ public static void intInsertion(int[] array)
 			if(array[j]>array[i])
 			{
 				 temp=array[j];
-				array[j]=array[i];
+				array[j]=array[i]; 
 				for(w=i;w>j+1;w--)
 				{
 				    array[w]=array[w-1];
@@ -196,54 +201,7 @@ public static void intInsertion(int[] array)
 }
 
 
-/**Binary Search for int
- * @param array
- * @param num
- * @param key
- */
-
-	
-
-public static String[] mergeSort(String[] names) {
-		        if (names.length >= 2) {
-		            String[] left = new String[names.length / 2];
-		            String[] right = new String[names.length - names.length / 2];
-
-		            for (int i = 0; i < left.length; i++) {
-		                left[i] = names[i];
-		            }
-
-		            for (int i = 0; i < right.length; i++) {
-		                right[i] = names[i + names.length / 2];
-		            }
-
-		            mergeSort(left);
-		            mergeSort(right);
-		            merge(names, left, right);
-		        }
-		        return names;
-		    }
-
-		    public static void merge(String[] names, String[] left, String[] right) {
-		        int a = 0;
-		        int b = 0;
-		        for (int i = 0; i < names.length; i++) {
-		            if (b >= right.length || (a < left.length && left[a].compareToIgnoreCase(right[b]) < 0)) {
-		                names[i] = left[a];
-		                a++;
-		            } else {
-		                names[i] = right[b];
-		                b++;
-		            }
-		        }
-		        //System.out.println(names);
-		    }
-		    
-		    
-
-
-	
-	/**Payment 
+/**Payment 
 	 * @param p
 	 * @param y
 	 * @param r
@@ -278,16 +236,12 @@ public static String[] mergeSort(String[] names) {
 			middle = (low +high)/2;
 		}
 		if (low > high)
-			System.out.println(key + " isn't present in the list.\n");
+			System.out.println(key + " isn't present in the list\n");
 	}
 
 
 
- 
-	public static void binString(String str, int n1, char key1) {
-		// TODO Auto-generated method stub
-		
-	}
+	
  
 
  
@@ -339,8 +293,7 @@ public static String[] mergeSort(String[] names) {
             System.out.println(change[i]+" notes:"+count);
             cash=cash-(count*change[i]);
         }
-    }
-    
+    } 
 }
 
 }
@@ -359,12 +312,46 @@ public static String[] mergeSort(String[] names) {
       int d0  = (d + x + (31 * m0) / 12) % 7;
       return d0;
     }
-    }
+
+
+	public static void binString(String str, int n1, char key1) {
+		// TODO Auto-generated method stub
+		
+	}
+    
 
     
     
     
-    
+/**Decimal to Binary
+ * @param n
+ */
+public static void decimaToBinary(int n) {
+	
+    { 
+        // array to store binary number 
+        int[] binaryNum = new int[1000]; 
+   
+        // counter for binary array 
+        int i = 0; 
+        while (n > 0)  
+        { 
+            // storing remainder in binary array 
+            binaryNum[i] = n % 2; 
+            n = n / 2; 
+            i++; 
+        } 
+   
+        // printing binary array in reverse order 
+        for (int j = i - 1; j >= 0; j--) 
+            System.out.print(binaryNum[j]); 
+    } 
+}
+}
+
+	// TODO Auto-generated method stub
+	
+
 
 
 
