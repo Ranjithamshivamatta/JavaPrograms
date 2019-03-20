@@ -1,6 +1,6 @@
 package com.bridgelabz.util;
-
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 //import java.util.Scanner;
@@ -238,20 +238,8 @@ public static void intInsertion(int[] array)
 		if (low > high)
 			System.out.println(key + " isn't present in the list\n");
 	}
-
-
-
 	
- 
-
- 
-
 		
-	
-
-
-	
-	
 	
 	/**Celsius temperature to Fahrenheit
 	 * @param celsius
@@ -316,8 +304,23 @@ public static void intInsertion(int[] array)
 
 	public static void binString(String str, int n1, char key1) {
 		// TODO Auto-generated method stub
-		
-	}
+		int[] binaryNum = new int[1000]; 
+		   
+        // counter for binary array 
+        int i = 0; 
+        while (n1 > 0)  
+        { 
+            // storing remainder in binary array 
+            binaryNum[i] = n1 % 2; 
+            n1 = n1 / 2; 
+            i++; 
+        } 
+   
+        // printing binary array in reverse order 
+        for (int j = i - 1; j >= 0; j--) 
+            System.out.print(binaryNum[j]); 
+    } 
+	
     
 
     
@@ -347,14 +350,207 @@ public static void decimaToBinary(int n) {
             System.out.print(binaryNum[j]); 
     } 
 }
-}
 
-	// TODO Auto-generated method stub
+// TODO Auto-generated method stub
 	
 
 
-
-
-
+public static void mergeSort(String[] array) {
+	if (array.length >= 2) {
 		
+        String[] left = new String[array.length / 2];
+        String[] right = new String[array.length - array.length / 2];
+
+        for (int i = 0; i < left.length; i++) {
+            left[i] = array[i];
+        }
+        for (int i = 0; i < right.length; i++) {
+            right[i] = array[i + array.length / 2];
+        }
+        mergeSort(left);
+        mergeSort(right);
+        merge(array, left, right);
+    }
+}
+public static void merge(String[] array, String[] left, String[] right) {
+    int a = 0;
+    int b = 0;
+    for (int i = 0; i < array.length; i++) {
+        if (b >= right.length || (a < left.length && left[a].compareToIgnoreCase(right[b]) < 0)) {
+            array[i] = left[a];
+            a++;
+        } else {
+            array[i] = right[b];
+            b++;
+        }
+    }
+}
+      
+
+
+
+ public static <T extends Comparable<T>> T maximum(T[] array, T key) {
+     // assume x is initially the largest
+int arrLength=array.length;
+int first = 0;
+int last = arrLength - 1;
+int middle = (first + last)/2;
+
+
+        while( first <= last )
+        {
+            if (array[middle].compareTo(key)>0)
+                first = middle + 1;                        
+            else if ( array[middle] == key )
+            {
+                System.out.println(key + " found at location " + middle);
+                break;
+            }
+            else
+                last = middle - 1;
+
+            middle = (first + last)/2;
+        }
+        if (first > last)
+            System.out.println(key + " isn't present in the list.\n");
+        return key;
+    }
+
+ 
+ /*
+Function to convert decimal to binary//
+	/**
+	 * @param d
+	 * @return
+	 */
+	public static int[] toBinary(int d)
+	{
+		String bin = "";
+		while (d != 0)
+		{
+			bin = (d % 2) + bin;
+			d /= 2;
+		}
+		
+		while (bin.length() % 4 != 0) 
+		{
+			bin = 0 + bin;
+		}
+		return stringToIntArray(bin);
+
+	}
+
+	// Function to convert string to int array helper function for swapnibble in//
+
+	/**
+	 * @param bin
+	 * @return
+	 */
+	 static int[] stringToIntArray(String bin)
+	{
+		int[] binary = new int[bin.length()];
+		for (int i = 0; i < binary.length; i++)
+		{
+			binary[i] = bin.charAt(i) - 48;
+		}
+		return binary;
+	}
+
+	// Function to convert binary to decimal//
+	/**
+	 * @param binary
+	 * @return
+	 */
+	public static int toDecimal(int[] binary)
+	{
+		int dec = 0, j = 0;
+		for (int i = binary.length - 1; i >= 0; i--) 
+		{
+			if (binary[i] == 1)
+			{
+				dec = dec + (int) Math.pow(2, j);
+			}
+			j++;
+		}
+		return dec;
+
+	}
+	// Function to convert string to int array helper function for swapnibble in//
+
+
+	public static String[] binString(String[] array, String key)
+	{
+		int arrLength = array.length;
+		int first = 0;
+		int last = arrLength - 1;
+		int middle = (first + last)/2;
+		
+		while(first<=last)
+		{
+			if(array[middle].compareTo(key)<0)
+				first = middle + 1;
+		
+		else if(array[middle].equals(key))
+		{
+			System.out.println(key + "Found at location" + middle);
+			break;
+		}
+		else
+			last = middle - 1;
+		middle = (first + last)/2;
+		}
+		if(first>last)
+			System.out.println(key + "It is not present in the list\n");
+		return array;
+		}
+
 	
+	public static void bubbleList(List<Integer> nos, int n) {
+		int i, temp;
+
+		for (i = 0; i < nos.size() - 1; i++) {
+			for (int j = 0; j < nos.size() - i - 1; j++) {
+
+				if (nos.get(j) > nos.get(j + 1)) {
+					temp = nos.get(j);
+					nos.set(j, nos.get(j + 1));
+					nos.set(j + 1, temp);
+
+				}
+			}
+		}
+		for (int k:nos) {
+			System.out.print(k+ " ");
+		}
+	
+	}
+	
+	
+	
+	public static void insertionSortList(List <String> array,int n) {
+
+		int i = 0, j = 0, w;
+		String temp;
+		for (i = 0; i < array.size(); i++) {
+			for (j = 0; j <= i; j++) {
+				if (array.get(j).compareTo(array.get(i))>0)
+				{
+					temp = array.get(j);
+					array.set(j, array.get(i));
+					for (w = i; w > j + 1; w--)
+						array.set(w, array.get(w-1));
+					array.set(w, temp);
+				}
+			}
+		}
+
+		for (String k:array)
+			System.out.print(k + " ");
+		System.out.println(" ");
+	}
+	
+	
+	
+	
+	
+	}

@@ -10,7 +10,6 @@ public class BubbleSort {
 		int[] arr = AlgorithmProgramming.arr();
 		System.out.println("Sorted arrays");
 		AlgorithmProgramming.bubbleSort(arr);
-		
 	}
 }	
 		

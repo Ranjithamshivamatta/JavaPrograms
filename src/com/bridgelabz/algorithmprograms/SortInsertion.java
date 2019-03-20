@@ -1,36 +1,14 @@
 package com.bridgelabz.algorithmprograms;
 
+
 import com.bridgelabz.util.AlgorithmProgramming;
 
 import com.bridgelabz.util.FunctionalProgramming;
 
+public class SortInsertion <T> {
 
-public class BinarySearch <T>{
-
-	public static <T extends Comparable<T>> T[] binary(T[] array, T key){
-		int length=array.length;
-		int first=0;
-		int last=length-1;
-		int middle=(first+last)/2;
-		while(first<=last)
-		{
-			if(key.compareTo(array[middle])>0)
-		     {
-		       first=middle+1;
-	          }
-			
-		else if(array[middle].equals(key))
-		{
-			System.out.println(key+"-found at location-"+middle);
-			break;
-		}
-		else
-		{
-			last=middle-1;
-		}
-	}
-		return array;
-	}
+		
+	
 	public static  void main(String[] args) {
 		System.out.println("enter the number of elements");
 		int N= AlgorithmProgramming.getInt();
@@ -39,12 +17,46 @@ public class BinarySearch <T>{
 		for(int i=0; i<N; i++) {
 			array[i]= AlgorithmProgramming.getString();
 		}
-		System.out.println("enter the key you want to search");
-		String key=AlgorithmProgramming.getString();
+		int n=array.length;
 		long stTime = System.nanoTime();
-		binary(array,key);
+		insertion(array,n);
+		for(int i=0;i<array.length;i++)
+		{
+		System.out.println(array[i]);
+		}
+		
 		long endTime = System.nanoTime();
 		long result=FunctionalProgramming.stopWatch(stTime,endTime);
 		System.out.println("elapsed time :"+result);
+		      
+		        
+	}
+
+
+	private static <T extends Comparable<T>> T[]insertion(String[] array, int n) {
+		
+			String temp;
+		for(int i=1;i<n;i++)
+		{
+			for(int j=i;j>0;j--)
+			{
+				if(array[j].compareToIgnoreCase(array[j-1])<0)
+				{
+					temp=array[j];
+					array[j]=array[j-1];
+					array[j-1]=temp;
+				}
+				else 
+					break;
+			} 
+		  }
+		
+		return null;
+		
+		 
 		}
-}
+
+			}
+
+
+

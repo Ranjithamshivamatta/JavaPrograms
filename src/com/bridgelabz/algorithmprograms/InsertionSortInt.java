@@ -4,7 +4,7 @@ import com.bridgelabz.util.AlgorithmProgramming;
 import com.bridgelabz.util.FunctionalProgramming;
 //import com.bridgelabz.util.FunctionalProgramming;
 
-public class InsertionSort {
+public class InsertionSortInt {
 
 	public static void main(String[] args) {
 	    long stTime=System.nanoTime();

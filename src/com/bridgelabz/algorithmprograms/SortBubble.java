@@ -1,35 +1,27 @@
 package com.bridgelabz.algorithmprograms;
 
 import com.bridgelabz.util.AlgorithmProgramming;
-
 import com.bridgelabz.util.FunctionalProgramming;
 
-
-public class BinarySearch <T>{
-
-	public static <T extends Comparable<T>> T[] binary(T[] array, T key){
-		int length=array.length;
-		int first=0;
-		int last=length-1;
-		int middle=(first+last)/2;
-		while(first<=last)
-		{
-			if(key.compareTo(array[middle])>0)
-		     {
-		       first=middle+1;
-	          }
-			
-		else if(array[middle].equals(key))
-		{
-			System.out.println(key+"-found at location-"+middle);
-			break;
-		}
-		else
-		{
-			last=middle-1;
-		}
+public class SortBubble <T> {
+	public static <T extends Comparable<T>> T[] bubble(T[] array){
+		for (int j = 0; j < array.length; j++) {
+	         for (int i = j + 1; i < array.length; i++) {
+	            // comparing strings
+	            if (array[i].compareTo(array[j]) < 0) {
+	         
+	               T temp = array[j];
+	               array[j] = array[i];
+	               array[i] = temp;
+	            }
+           
 	}
+		} for(int k=0;k<array.length;k++) {
+        	System.out.println(array[k]);
+        }
 		return array;
+		
+
 	}
 	public static  void main(String[] args) {
 		System.out.println("enter the number of elements");
@@ -39,12 +31,16 @@ public class BinarySearch <T>{
 		for(int i=0; i<N; i++) {
 			array[i]= AlgorithmProgramming.getString();
 		}
-		System.out.println("enter the key you want to search");
-		String key=AlgorithmProgramming.getString();
+
 		long stTime = System.nanoTime();
-		binary(array,key);
+		
+		bubble(array); 
+		
 		long endTime = System.nanoTime();
 		long result=FunctionalProgramming.stopWatch(stTime,endTime);
 		System.out.println("elapsed time :"+result);
+
 		}
-}
+	}
+
+

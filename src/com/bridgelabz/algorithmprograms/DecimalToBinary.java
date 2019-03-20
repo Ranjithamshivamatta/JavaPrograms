@@ -9,7 +9,8 @@ public class DecimalToBinary {
 				System.out.println("Enter a decimal number to convert it into binary");
 				int n=AlgorithmProgramming.getInt();
 		       AlgorithmProgramming.decimaToBinary(n); 
-		    }		
+		    }	
+			
 } 
 	
 
