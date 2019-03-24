@@ -1,4 +1,5 @@
 package com.bridgelabz.util;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -516,6 +517,7 @@ Function to convert decimal to binary//
 					nos.set(j, nos.get(j + 1));
 					nos.set(j + 1, temp);
 
+					
 				}
 			}
 		}
@@ -550,7 +552,164 @@ Function to convert decimal to binary//
 	}
 	
 	
+	public static <T extends Comparable<T>> void binary(T[] array, T key){
+		int length=array.length;
+		int first=0;
+		int last=length-1;
+		int middle=(first+last)/2;
+		while(first<=last)
+		{
+			if(key.compareTo(array[middle])>0)
+		     {
+		       first=middle+1;
+	          }
+			
+		else if(array[middle].equals(key))
+		{
+			System.out.println(key+"-found at location-"+middle);
+			break;
+		}
+		else
+		{
+			last=middle-1;
+		}
+			middle=(first+last) /2;
+	}
+	if(first>last)
+		System.out.println("key not found");
+	}
 	
 	
+	public static <T extends Comparable<T>> void insertionSort(T[] array) {
+		int i = 0, j = 0, w;
+		for (i = 0; i < array.length; i++) {
+			for (j = 0; j <= i; j++) {
+				if (array[j].compareTo(array[i])>0) {
+					T temp = array[j];
+					array[j] = array[i];
+					for (w = i; w > j + 1; w--)
+						array[w] = array[w - 1];
+					array[w] = temp;
+				}
+			}
+		}
+		for (T kl : array)
+			System.out.println(kl + " ");
+		System.out.println(" ");
+	}
 	
+	public static <T extends Comparable<T>> T[] bubble(T[] array){
+		for (int j = 0; j < array.length; j++) {
+	         for (int i = j + 1; i < array.length; i++) {
+	            // comparing strings
+	            if (array[i].compareTo(array[j]) < 0) {
+	         
+	               T temp = array[j];
+	               array[j] = array[i];
+	               array[i] = temp;
+	            }
+           
+	}
+		} for(int k=0;k<array.length;k++) {
+        	System.out.println(array[k]);
+        }
+		return array;
+	
+	}
+	
+
+/*PalindromePrimeAnagram*/
+	
+	public static void prime() {
+		String primeNumbers = "";
+		for (int i = 0; i <= 1000; i++) {
+			int counter = 0;
+			for (int j = i; j >= 1; j--) {
+				if (i % j == 0) {
+					counter = counter + 1;
+				}
+			}
+			if (counter == 2) {
+				primeNumbers = primeNumbers + i + " ";
+			}
+		}
+
+		
+		
+		System.out.println(primeNumbers);
+		
+	}
+
+public static void primePallindrome() {
+		 System.out.println();
+		boolean b;
+		for (int j = 2; j <= 1000; j++) {
+			b = true;
+			for (int i = 2; i < j / 2; i++) {
+				if (j % i == 0) {
+					b = false;
+					break;
+				}
+			}
+			if (b && isPallindrome(j))
+				System.out.print(j + " ");
+		}
+	}
+	private static boolean isPallindrome(int n) {
+		for (int i = 2; i < n / 2; i++) {
+			if (i % n == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	public static void primeAnagrams() {
+		ArrayList<Integer> ar = new ArrayList<Integer>();
+		System.out.println();
+		boolean b;
+		for (int j = 2; j <= 1000; j++) {
+			b = true;
+			for (int i = 2; i < j / 2; i++) {
+				if (j % i == 0) {
+					b = false;
+					break;
+				}
+			}
+			if (b)
+				ar.add(j);
+		}
+		for (int i = 0; i < ar.size(); i++) {
+			for (int j = i + 1; j < ar.size(); j++) {
+				if (anagram(ar.get(i), ar.get(j))) {
+					System.out.println(ar.get(i) + "  " + ar.get(j));
+				}
+			}
+		}
+		
+		
+		
+	}
+	private static boolean anagram(Integer n1,Integer n2){
+		int[] n1count = count(n1);
+		int[] n2count = count(n2);
+		for (int i = 0; i < n2count.length; i++) {
+			if (n1count[i] != n2count[i]) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public static int[] count(int n) {
+		int[] count = new int[10];
+		int temp = n;
+		while (temp != 0) {
+			int r = temp % 10;
+			count[r]++;
+			temp = temp / 10;
+		}
+		return count;
+	}
+	
+
 	}
