@@ -6,7 +6,7 @@ import java.io.FileReader;
 
 import com.bridgelabz.util.AlgorithmProgramming;
 
-public class BinarySearchFile {
+public class BinarySearch1 {
 
 	public static void main(String[] args)throws Exception
 	{

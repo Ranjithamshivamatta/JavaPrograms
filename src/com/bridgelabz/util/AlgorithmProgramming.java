@@ -99,8 +99,6 @@ public static int getInt()
  */
 public static boolean isAnagram(char[] str1,char[] str2)
 {
-	
-	
 	int n1 = str1.length;
 	int n2 = str2.length;
 	
@@ -280,11 +278,10 @@ public static void intInsertion(int[] array)
         {
             count=cash/change[i];
             System.out.println(change[i]+" notes:"+count);
-            cash=cash-(count*change[i]);
+            cash=cash % change[i];
         }
     } 
 }
-
 }
     
     /**Day of the week
@@ -417,68 +414,24 @@ int middle = (first + last)/2;
         return key;
     }
 
+
  
- /*
-Function to convert decimal to binary//
-	/**
-	 * @param d
-	 * @return
-	 */
-	public static int[] toBinary(int d)
+ 
+//SWAP NIBBLES
+	public static int swapNibbles(int x) {
+		{ 
+			return ((x & 0x0F) << 4 | (x & 0xF0) >> 4); 
+		}
+	}
+	//IS POWER OF 2
+	public static boolean isPowerOfTwo(int res)
 	{
-		String bin = "";
-		while (d != 0)
-		{
-			bin = (d % 2) + bin;
-			d /= 2;
-		}
-		
-		while (bin.length() % 4 != 0) 
-		{
-			bin = 0 + bin;
-		}
-		return stringToIntArray(bin);
-
+		return (int)(Math.ceil((Math.log(res) / Math.log(2)))) ==  
+				(int)(Math.floor(((Math.log(res) / Math.log(2))))); 
 	}
 
-	// Function to convert string to int array helper function for swapnibble in//
 
-	/**
-	 * @param bin
-	 * @return
-	 */
-	 static int[] stringToIntArray(String bin)
-	{
-		int[] binary = new int[bin.length()];
-		for (int i = 0; i < binary.length; i++)
-		{
-			binary[i] = bin.charAt(i) - 48;
-		}
-		return binary;
-	}
-
-	// Function to convert binary to decimal//
-	/**
-	 * @param binary
-	 * @return
-	 */
-	public static int toDecimal(int[] binary)
-	{
-		int dec = 0, j = 0;
-		for (int i = binary.length - 1; i >= 0; i--) 
-		{
-			if (binary[i] == 1)
-			{
-				dec = dec + (int) Math.pow(2, j);
-			}
-			j++;
-		}
-		return dec;
-
-	}
-	// Function to convert string to int array helper function for swapnibble in//
-
-
+	
 	public static String[] binString(String[] array, String key)
 	{
 		int arrLength = array.length;
@@ -509,7 +462,8 @@ Function to convert decimal to binary//
 	public static void bubbleList(List<Integer> nos, int n) {
 		int i, temp;
 
-		for (i = 0; i < nos.size() - 1; i++) {
+		for (i = 0; i < nos.size() - 1; i++)
+		{
 			for (int j = 0; j < nos.size() - i - 1; j++) {
 
 				if (nos.get(j) > nos.get(j + 1)) {
@@ -560,7 +514,7 @@ Function to convert decimal to binary//
 		while(first<=last)
 		{
 			if(key.compareTo(array[middle])>0)
-		     {
+		      {
 		       first=middle+1;
 	          }
 			
