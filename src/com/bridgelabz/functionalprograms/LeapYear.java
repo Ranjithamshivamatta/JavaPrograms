@@ -10,7 +10,8 @@ public class LeapYear {
 	//Scanner scan = new Scanner(System.in);
 	System.out.println("Check whether a entered digit is leap year or not");
 	int year= FunctionalProgramming.getInt();
-	FunctionalProgramming.leapYear(year);
+	boolean result=FunctionalProgramming.leapYear(year);
+	 System.out.println("It is a leap year");
 }
 
 	

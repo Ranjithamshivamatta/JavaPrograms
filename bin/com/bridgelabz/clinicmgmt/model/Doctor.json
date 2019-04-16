@@ -1,0 +1,19 @@
+{
+	"Doctor": [
+		{
+			"Name": "Ranju",
+			"Id": 1,
+			"Spec": "Opthmologist"
+		},
+		{
+			"Name": "B.P",
+			"Id": 2,
+			"Spec": "Cardiologist"
+		},
+		{
+			"Name": "Nidhi",
+			"Id": 3,
+			"Spec": "Neurologist"
+		}
+	]
+}

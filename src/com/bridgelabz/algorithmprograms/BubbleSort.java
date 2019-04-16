@@ -1,19 +1,23 @@
 package com.bridgelabz.algorithmprograms;
 
 import com.bridgelabz.util.AlgorithmProgramming;
+import com.bridgelabz.util.FunctionalProgramming;
 
-public class BubbleSort {
+public class BubbleSort<T> {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Enter the elements");
-		int[] arr = AlgorithmProgramming.arr();
-		System.out.println("Sorted arrays");
-		AlgorithmProgramming.bubbleSort(arr);
+	public static <T> void main(String[] args) {
+		System.out.println("enter the number of elements");
+		int N = AlgorithmProgramming.getInt();
+		String[] array = new String[N];
+		System.out.println("enter next element");
+		for (int i = 0; i < N; i++) {
+			array[i] = AlgorithmProgramming.getString();
+		}
+		long stTime = System.nanoTime();
+		AlgorithmProgramming.bubble(array);
+		long endTime = System.nanoTime();
+		long result = FunctionalProgramming.stopWatch(stTime, endTime);
+		System.out.println("elapsed time :" + result);
+
 	}
-}	
-		
-		
-		
-		
-
+}

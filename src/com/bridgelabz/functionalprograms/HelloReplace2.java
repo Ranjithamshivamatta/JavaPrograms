@@ -11,7 +11,6 @@ System.out.println("original string:  "+sentence);
 System.out.println("Enter the name to replace with username:");
 String userName = FunctionalProgramming.getString();
 System.out.println(FunctionalProgramming.replace2(sentence,userName));
-
 	}
 
 }
