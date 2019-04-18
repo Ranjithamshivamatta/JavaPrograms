@@ -4,7 +4,7 @@ public class Doctor {
 
 private int id;	
 private String name;
-private String spec;
+private String specialization;
 private String availability;
 public int getId() {
 	return id;
@@ -18,11 +18,11 @@ public String getName() {
 public void setName(String name) {
 	this.name = name;
 }
-public String getSpec() {
-	return spec;
+public String getSpecialization() {
+	return specialization;
 }
-public void setSpec(String spec) {
-	this.spec = spec;
+public void setSpecialization(String specialization) {
+	this.specialization = specialization;
 }
 
 public String getAvailability() {

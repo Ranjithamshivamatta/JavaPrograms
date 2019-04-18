@@ -19,7 +19,7 @@ public static void main(String[] args) throws FileNotFoundException, IOException
 			JSONObject DoctorList = (JSONObject) obj;
 			System.out.println(DoctorList);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		}
 	

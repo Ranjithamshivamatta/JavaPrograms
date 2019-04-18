@@ -13,6 +13,7 @@ public static void main(String[] args)
 	//Print the shuffled deck of cards
 	//deck.printDeck();
 	//Print the deck of 9 cards distributed to 4 people
-    deck.totalDeck();
+   
+    deck.printDeck();
 }
 }

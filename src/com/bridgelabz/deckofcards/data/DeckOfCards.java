@@ -6,4 +6,4 @@ public interface DeckOfCards {
 	void initDeck();
 	   void shuffleDeck();
 	   void printDeck();
-}
+}   
