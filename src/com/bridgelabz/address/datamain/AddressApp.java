@@ -9,26 +9,16 @@ import org.json.simple.parser.ParseException;
 import com.bridgelabz.address.data.AddressService;
 import com.bridgelabz.address.dataimple.AddressServiceImple;
 import com.bridgelabz.util.AlgorithmProgramming;
+import com.bridgelabz.util.DataStructureProgramming;
 
 public class AddressApp {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
 		// TODO Auto-generated method stub
 		 AddressService AddressBookImpl = new AddressServiceImple();
 	        AddressServiceImple imp= new AddressServiceImple();
 	        {
-	            try {
-					imp.fileRead();
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (ParseException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+	            imp.readfile();
 	            Scanner sc = new Scanner(System.in);
 	            
 	            
@@ -38,23 +28,48 @@ public class AddressApp {
 	            int input = AlgorithmProgramming.getInt();
 	            switch (input){
 	            case 1:
-	                imp.addPerson("Anu", "Kavya", 213211l, 1234567898l,"Rajmathe","Mysore","Bangalore");
+	            	
+	            	System.out.println("Enter the firstname: ");
+	                String firstname=DataStructureProgramming.getString();
+	                
+	                System.out.println("Enter the lastname: ");
+	                String lastname=DataStructureProgramming.getString();
+	                
+	                System.out.println("Enter the city: ");
+	                String city=DataStructureProgramming.getString();
+	                
+	                System.out.println("Enter the state: ");
+	                String state=DataStructureProgramming.getString();
+	                
+	                System.out.println("Enter the address: ");
+	                String address=DataStructureProgramming.getString();
+	                
+	                System.out.println("Enter the zipcode: ");
+	                Long zipcode=DataStructureProgramming.getLong();
+	                
+	                System.out.println("Enter the phonenumber: ");
+	               Long phonenumber=DataStructureProgramming.getLong();
+	                
+	                imp. addPerson(firstname,  lastname,  city, state, address,  zipcode, phonenumber); 
+	                imp.writeFile();
 	                break;
 	            case 2:
-	                imp.removePerson();
+	                imp.deletePerson();
+	         
+	                
 	                break;
 	            case 3:
-	              imp.lastNameSort();
+	              imp.LastNameSort();
 	                break;
 	            case 4:
-	                imp.zipCodeSort();
+	                imp.ZipCodeSort();
 	                break;
 	            }
-	            imp.writeFile();
+	            
 	                        
 	        }
-	        }
-	    
-	}
+	        
+	}}
+	
 
 

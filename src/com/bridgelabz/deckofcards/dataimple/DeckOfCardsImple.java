@@ -42,10 +42,11 @@ public class DeckOfCardsImple implements DeckOfCards {
 				System.out.print(" person"+ i +" \t");
 			}
 			System.out.print("\n");
-
+int k=0;
 			for (int i = 0; i < 9; i++) {
 				for (int j = 0; j < 4; j++) {
-					System.out.print(" "+(deck[i + j * 4])+" \t" ); 
+					System.out.print(" "+(deck[k])+" \t" );
+					k++;
 				}
 				System.out.println();
 			}

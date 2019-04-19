@@ -1,8 +1,9 @@
 package com.bridgelabz.address.data;
 
 public interface AddressService {
-	 public void addPerson(String firstname, String lastname, Long zipcode, Long phonenumber, String city, String state, String address);
-	    public void removePerson();
-	    public void lastNameSort();
-	    public void zipCodeSort();
-}
+	
+		public void addPerson(String firstname,String lastname,String street,String city,String state,Long zipcode,Long phonenumber);
+		public void deletePerson();
+		public void LastNameSort();
+		public void ZipCodeSort();
+	}
