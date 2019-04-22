@@ -1,0 +1,31 @@
+package com.bridgelabz.regex.dataImple;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegexImple {
+
+	public static String replace(String first, String fullName, String phoneNum, String date, String message) {
+		final String REGEX_NAME = "<name>";
+		final String REGEX_FULL_NAME = "<full name>";
+		final String REGEX_CONTACT = "xxxxxxxxxx";
+		final String REGEX_DATE = "<01/01/2016>";
+		Pattern namePattern = Pattern.compile(REGEX_NAME);
+		Matcher nameMatcher = namePattern.matcher(message);
+		message = nameMatcher.replaceAll(first);
+
+		Pattern fullNamePatttern = Pattern.compile(REGEX_FULL_NAME);
+		Matcher fullNameMatcher = fullNamePatttern.matcher(message);
+		message = fullNameMatcher.replaceAll(fullName);
+
+		Pattern contactNumber = Pattern.compile(REGEX_CONTACT);
+		Matcher contactMatcher = contactNumber.matcher(message);
+		message = contactMatcher.replaceAll(phoneNum);
+
+		Pattern datePattern = Pattern.compile(REGEX_DATE);
+		Matcher dateMatcher = datePattern.matcher(message);
+		message = dateMatcher.replaceAll(date);
+		return message;
+	}
+
+}

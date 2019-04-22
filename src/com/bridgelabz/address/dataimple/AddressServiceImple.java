@@ -12,8 +12,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import com.bridgelab.address.model.Address;
 import com.bridgelabz.address.data.AddressService;
+import com.bridgelabz.address.model.Address;
 import com.bridgelabz.inventory.model.Inventory;
 import com.bridgelabz.util.DataStructureProgramming;
 import com.google.gson.Gson;
